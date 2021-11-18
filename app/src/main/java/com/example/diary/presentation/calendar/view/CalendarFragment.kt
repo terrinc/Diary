@@ -24,10 +24,10 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        if (savedInstanceState == null) {
+        if (savedInstanceState == null) {
             calendarViewModel.loadEvents()
             initRecycler()
-//        }
+        }
         // TODO fix crash when back from details
         calendarViewModel.allEvents.observe(this.viewLifecycleOwner) {
             initCalendar(it)
