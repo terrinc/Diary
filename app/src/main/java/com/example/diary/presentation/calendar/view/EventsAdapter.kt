@@ -9,7 +9,7 @@ import timber.log.Timber
 import java.util.*
 
 class EventsAdapter(
-    private val onEventClick: (Event) -> Unit
+    private val onEventClick: (Int) -> Unit
 ) : RecyclerView.Adapter<EventViewHolder>() {
 
     private var eventList: List<Event> = listOf()

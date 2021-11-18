@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/calendarFragment_dest">
+
+    <fragment
+        android:id="@+id/calendarFragment_dest"
+        android:name="com.example.diary.presentation.calendar.view.CalendarFragment"
+        android:label="CalendarFragment"
+        tools:layout="@layout/fragment_calendar">
+        <action
+            android:id="@+id/to_details"
+            app:destination="@id/eventDetailsFragment_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventDetailsFragment_dest"
+        android:name="com.example.diary.presentation.details.EventDetailsFragment"
+        android:label="EventDetailsFragment"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="eventId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>

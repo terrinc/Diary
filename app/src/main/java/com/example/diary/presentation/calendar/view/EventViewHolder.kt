@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.diary.databinding.ViewHolderEventItemBinding
 import com.example.diary.domain.models.Event
 
-class EventViewHolder(view: View, private val clickListener: (Event) -> Unit) : RecyclerView.ViewHolder(view) {
+class EventViewHolder(view: View, private val clickListener: (Int) -> Unit) : RecyclerView.ViewHolder(view) {
     private val binding = ViewHolderEventItemBinding.bind(itemView)
 
     fun bind(row: Row) {
@@ -17,7 +17,7 @@ class EventViewHolder(view: View, private val clickListener: (Event) -> Unit) : 
             }
             row.event?.let { event ->
                 name.text = event.name
-                root.setOnClickListener { clickListener(event) }
+                root.setOnClickListener { clickListener(event.id) }
             }
         }
     }
